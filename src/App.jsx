@@ -91,14 +91,11 @@ const planoAula = [
 
 export default function App() {
   const [aberta, setAberta] = useState(0);
-const total = planoAula.reduce((soma, [, duracao]) => soma + parseInt(duracao), 0);
+  const total = planoAula.reduce((soma, [, duracao]) => soma + parseInt(duracao), 0);
+
   return (
     <>
       <header className="topo">
-        <div>
-          <h1>plano de aula</h1>
-          <p>Aula de {total} minutos </p>
-        </div>
         <div className="wrap barra">
           <span className="marca">Teacher Pedro</span>
           <nav aria-label="Principal">
@@ -211,7 +208,7 @@ const total = planoAula.reduce((soma, [, duracao]) => soma + parseInt(duracao), 
 
         <section id="plano" className="faixa">
           <div className="wrap">
-            <h2>Exemplo de plano de aula (60 min)</h2>
+            <h2>Exemplo de plano de aula ({total} min)</h2>
             <ol className="plano">
               {planoAula.map(([fase, tempo, texto]) => (
                 <li key={fase}>
