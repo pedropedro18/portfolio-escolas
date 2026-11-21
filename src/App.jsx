@@ -81,6 +81,10 @@ const ferramentas = [
 // ✏️ O nome em "ficheiro" tem de ser IGUAL ao nome do PDF em public/certificados/
 const formacao = [
   {
+    titulo: "Licenciattura em Engenharia Informática",
+    texto: "Gregório Semedo, 2017 a 2024.",
+  },
+  {
     titulo: "Formação de educadores Maple Bear",
     texto: "Metodologia de ensino bilingue e planeamento de aula.",
   },
