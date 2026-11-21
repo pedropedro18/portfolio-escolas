@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 
 // ✏️ Edita estes dados com os teus
-const LINKEDIN = "https://www.linkedin.com/in/o-teu-perfil";
+const LINKEDIN = "https://www.linkedin.com/in/pedro-tomas-227986355";
 const CURRICULO = "/curriculo-teacher-pedro.pdf"; // coloca o PDF na pasta public/
 const EMAIL = "pt8066545@email.com";
 
@@ -103,6 +103,7 @@ export default function App() {
             <a href="#materiais">Materiais</a>
             <a href="#plano">Plano de aula</a>
             <a href="#formacao">Formação</a>
+            <a href="#curriculo">Currículo</a>
             <a href="#contacto">Contratar</a>
           </nav>
         </div>
@@ -122,8 +123,8 @@ export default function App() {
               <a className="btn principal" href={CURRICULO} download>
                 Descarregar currículo
               </a>
-              <a className="btn secundario" href={LINKEDIN} target="_blank" rel="noreferrer">
-                Convidar para entrevista
+              <a className="btn secundario" href="#curriculo">
+                Ver currículo
               </a>
             </div>
           </div>
@@ -231,6 +232,31 @@ export default function App() {
                   <p>{f.texto}</p>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="curriculo" className="faixa">
+          <div className="wrap">
+            <h2>Currículo</h2>
+            <p className="curriculo-texto">
+              Consulte o meu currículo completo com formação e experiência
+              como professor de inglês.
+            </p>
+            <div className="botoes">
+              <a className="btn principal" href={CURRICULO} target="_blank" rel="noreferrer">
+                Abrir currículo
+              </a>
+              <a className="btn secundario" href={CURRICULO} download="Curriculo-Teacher-Pedro.pdf">
+                Descarregar PDF
+              </a>
+            </div>
+            <div className="curriculo-pdf">
+              <iframe
+                src={`${CURRICULO}#view=FitH`}
+                title="Currículo do Teacher Pedro"
+                loading="lazy"
+              />
             </div>
           </div>
         </section>
