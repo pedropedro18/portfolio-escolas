@@ -3,10 +3,10 @@ import "./App.css";
 
 // ✏️ Edita estes dados com os teus
 const LINKEDIN = "https://www.linkedin.com/in/pedro-tomas-227986355";
-const CURRICULO = "/curriculo-teacher-pedro.pdf"; // coloca o PDF na pasta public/
+const CURRICULO = "/curriculo-teacher-pedro.pdf";
 const EMAIL = "pt8066545@email.com";
-const PLATAFORMA = "https://english-teacher-portfolio-six.vercel.app/";
-const PORTFOLIO = "https://teacher-pedro-react.vercel.app/";
+const PLATAFORMA = "https://teacher-pedro-react.vercel.app/";
+const PORTFOLIO = "https://english-teacher-portfolio-six.vercel.app/";
 
 const razoes = [
   { titulo: "Todos os níveis CEFR", texto: "Leciono do A1 ao C2, para que uma só pessoa cubra várias turmas." },
@@ -16,7 +16,7 @@ const razoes = [
 ];
 
 const disponibilidade = [
-  ["Tipo de contrato", "Tempo inteiro, part-time ou por turmas"], // ✏️ ajusta
+  ["Tipo de contrato", "Tempo inteiro, part-time ou por turmas"],
   ["Modalidade", "Presencial ou online"],
   ["Início", "Imediato"],
   ["Local", "Angola"],
@@ -78,19 +78,27 @@ const ferramentas = [
   { titulo: "Gerador de aulas", texto: "Cria aulas por nível CEFR e tema, com PDF para descarregar." },
 ];
 
-// ✏️ Acrescenta aqui graus, certificados e cursos.
-// "ficheiro" é opcional: coloca o PDF em public/certificados/ e escreve o caminho.
+// ✏️ O nome em "ficheiro" tem de ser IGUAL ao nome do PDF em public/certificados/
 const formacao = [
   {
     titulo: "Formação de educadores Maple Bear",
     texto: "Metodologia de ensino bilingue e planeamento de aula.",
-    // ficheiro: "/certificados/maple-bear.pdf",
   },
-  // {
-  //   titulo: "Certificado de Aptidão Pedagógica (CAP)",
-  //   texto: "Instituição e ano.",
-  //   ficheiro: "/certificados/cap.pdf",
-  // },
+  {
+    titulo: "FVS – Foundations of ...",
+    texto: "Certificado FVS.",
+    ficheiro: "/certificados/fvs-foundations.pdf",
+  },
+  {
+    titulo: "Global Connections – Classroom ...",
+    texto: "Certificado Global Connections.",
+    ficheiro: "/certificados/global-connections.pdf",
+  },
+  {
+    titulo: "Trauma-Informed ...",
+    texto: "Certificado em prática informada sobre trauma.",
+    ficheiro: "/certificados/trauma-informed.pdf",
+  },
 ];
 
 const planoAula = [
@@ -267,7 +275,7 @@ export default function App() {
                   <h3>{f.titulo}</h3>
                   <p>{f.texto}</p>
                   {f.ficheiro && (
-                    <a href={f.ficheiro} target="_blank" rel="noreferrer">
+                    <a href={encodeURI(f.ficheiro)} target="_blank" rel="noreferrer">
                       Ver certificado
                     </a>
                   )}
