@@ -85,7 +85,7 @@ const planoAula = [
   ["Aquecimento", "5 min", "Pergunta de ativação para introduzir o tema."],
   ["Apresentação", "10 min", "Língua nova em contexto, com exemplos do dia a dia."],
   ["Prática guiada", "15 min", "Exercícios controlados em pares."],
-  ["Prática livre", "15 min", "Tarefa de comunicação com resultado concreto."],
+  ["Prática livre", "10 min", "Tarefa de comunicação com resultado concreto."],
   ["Feedback e fecho", "5 min", "Correção dos erros frequentes e síntese do que se aprendeu."],
 ];
 
