@@ -5,6 +5,8 @@ import "./App.css";
 const LINKEDIN = "https://www.linkedin.com/in/pedro-tomas-227986355";
 const CURRICULO = "/curriculo-teacher-pedro.pdf"; // coloca o PDF na pasta public/
 const EMAIL = "pt8066545@email.com";
+const PLATAFORMA = "https://english-teacher-portfolio-six.vercel.app/";
+const PORTFOLIO = "https://teacher-pedro-react.vercel.app/";
 
 const razoes = [
   { titulo: "Todos os níveis CEFR", texto: "Leciono do A1 ao C2, para que uma só pessoa cubra várias turmas." },
@@ -76,9 +78,19 @@ const ferramentas = [
   { titulo: "Gerador de aulas", texto: "Cria aulas por nível CEFR e tema, com PDF para descarregar." },
 ];
 
+// ✏️ Acrescenta aqui graus, certificados e cursos.
+// "ficheiro" é opcional: coloca o PDF em public/certificados/ e escreve o caminho.
 const formacao = [
-  { titulo: "Formação de educadores Maple Bear", texto: "Metodologia de ensino bilingue e planeamento de aula." },
-  // ✏️ Acrescenta aqui graus, certificados e cursos
+  {
+    titulo: "Formação de educadores Maple Bear",
+    texto: "Metodologia de ensino bilingue e planeamento de aula.",
+    // ficheiro: "/certificados/maple-bear.pdf",
+  },
+  // {
+  //   titulo: "Certificado de Aptidão Pedagógica (CAP)",
+  //   texto: "Instituição e ano.",
+  //   ficheiro: "/certificados/cap.pdf",
+  // },
 ];
 
 const planoAula = [
@@ -103,6 +115,7 @@ export default function App() {
             <a href="#metodologias">Metodologias</a>
             <a href="#materiais">Materiais</a>
             <a href="#plano">Plano de aula</a>
+            <a href="#plataforma">Plataforma</a>
             <a href="#formacao">Formação</a>
             <a href="#curriculo">Currículo</a>
             <a href="#contacto">Contratar</a>
@@ -223,7 +236,29 @@ export default function App() {
           </div>
         </section>
 
-        <section id="formacao">
+        <section id="plataforma">
+          <div className="wrap">
+            <h2>Plataforma e portfólio</h2>
+            <div className="grade">
+              <article className="cartao">
+                <h3>Plataforma de inglês</h3>
+                <p>Aulas, exercícios e materiais online para praticar por nível.</p>
+                <a href={PLATAFORMA} target="_blank" rel="noreferrer">
+                  Abrir plataforma
+                </a>
+              </article>
+              <article className="cartao">
+                <h3>Portfólio Teacher Pedro</h3>
+                <p>Trabalhos, materiais e projetos desenvolvidos.</p>
+                <a href={PORTFOLIO} target="_blank" rel="noreferrer">
+                  Ver portfólio
+                </a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="formacao" className="faixa">
           <div className="wrap">
             <h2>Formação</h2>
             <div className="grade">
@@ -231,13 +266,18 @@ export default function App() {
                 <article className="cartao" key={f.titulo}>
                   <h3>{f.titulo}</h3>
                   <p>{f.texto}</p>
+                  {f.ficheiro && (
+                    <a href={f.ficheiro} target="_blank" rel="noreferrer">
+                      Ver certificado
+                    </a>
+                  )}
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="curriculo" className="faixa">
+        <section id="curriculo">
           <div className="wrap">
             <h2>Currículo</h2>
             <p className="curriculo-texto">
