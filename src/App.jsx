@@ -91,10 +91,14 @@ const planoAula = [
 
 export default function App() {
   const [aberta, setAberta] = useState(0);
-
+const total = planoAula.reduce((soma, [, duracao]) => soma + parseInt(duracao), 0);
   return (
     <>
       <header className="topo">
+        <div>
+          <h1>plano de aula</h1>
+          <p>Aula de {total} minutos </p>
+        </div>
         <div className="wrap barra">
           <span className="marca">Teacher Pedro</span>
           <nav aria-label="Principal">
